@@ -1,0 +1,36 @@
+   Copyright 2011 Christoph-Simon Senjak
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+
+
+7-chloro-4-nitrobenzofurazan is a small Network Block Device server
+library for Common Lisp. It has no special aims except producing
+nerdgasms, and maybe realizing a few ideas regarding my other
+deduplication projects.
+
+Due to laziness it does not have an asdf-package yet. It requires
+usocket.
+
+The API is simple and self-explanatory:
+
+(start-single-server port size read-callback write-callback)
+
+starts a server, where you need to provide the port, the size of the
+block device, and two callback functions. An example server, creating
+a block device on a LISP vector, is given in the function run-rampool
+- BEWARE that this returns the whole ram block device as an array - SO
+SET *PRINT-LENGTH* APPROPRIATE!
+
+Send requests, patches and kappa maki to christoph dot senjak at
+googlemail dot com.
